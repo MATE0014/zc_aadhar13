@@ -1,6 +1,6 @@
 **Developers**
 
 > Moxit Rewar  
->  Shristi Sharma
-> Prakriti
+>  Shristi Sharma  
+> Prakriti  
 > Saksham Sakhaya
