@@ -1,0 +1,100 @@
+.footer {
+  background-color: #111;
+  height: 100%;
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.footer-logo-section {
+  flex: 1; /* Allows the logo section to occupy its own space */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer-logo-section img {
+  width: 300px; /* Fixed width of the logo */
+  height: auto;
+}
+
+.footer-section {
+  flex: 1; /* Allows sections to be evenly spaced */
+  text-align: center; /* Centers the content within the section */
+}
+
+.quick-links {
+  text-align: center;
+}
+
+.contact-us {
+  text-align: right; /* Aligns the Contact Us section to the right */
+}
+
+.footer-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #0843a5;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #0843a5;
+  padding-right: 150px;
+}
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  line-height: 1.5;
+  text-align: left;
+  padding-left: 100px;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ff0000;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo-section {
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+    text-align: center; /* Center all sections for smaller screens */
+  }
+
+  .contact-us {
+    text-align: center; /* Override right alignment for small screens */
+  }
+}

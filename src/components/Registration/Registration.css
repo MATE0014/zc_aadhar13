@@ -1,0 +1,457 @@
+/* Keep the page scrollable while hiding the form scrollbar */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Registration container */
+.registration-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Hide overflow for the registration container */
+}
+
+/* Background video */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Dark overlay above the video */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 1;
+}
+
+.left-side {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.right-side {
+  width: 50%;
+}
+
+.registration-form {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Darker background for better contrast */
+  border-radius: 10px;
+  margin-left: auto;
+  color: white;
+  height: auto; /* Adjust form height */
+  max-height: 80vh; /* Set a max height for the form */
+  overflow-y: auto; /* Allow vertical scrolling if the form is too long */
+  scrollbar-width: none; /* Firefox: Hide scrollbar */
+  -ms-overflow-style: none; /* IE/Edge: Hide scrollbar */
+}
+
+.registration-form::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari, etc.) */
+}
+
+h2.text-center {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 18px;
+  color: #fff;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+button.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.btn-view-rules {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button.btn-view-rules:hover {
+  background-color: #218838;
+}
+
+button.close-rules {
+  width: 100%;
+  padding: 10px;
+  background-color: #dc3545;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button.close-rules:hover {
+  background-color: #c82333;
+}
+
+.rules-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.rules-content {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.pay-here {
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+}
+/* Confirmation Overlay */
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-overlay.show {
+  display: flex; /* Show the overlay when the class is added */
+}
+
+.confirmation-content {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.confirmation-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.confirmation-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+button.close-confirmation {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.close-confirmation:hover {
+  background-color: #0056b3;
+}
+
+/* Pay Here Button */
+button.btn-pay-here {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffc107; /* Yellow button */
+  color: #000;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button.btn-pay-here:hover {
+  background-color: #e0a800;
+}
+
+/* Payment Overlay */
+.payment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.payment-content {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.payment-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.payment-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.payment-content img.qr-code {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+button.close-payment {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.close-payment:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .registration-container {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .left-side {
+    text-align: center;
+  }
+
+  .right-side {
+    margin-left: 0;
+  }
+
+  .registration-form {
+    max-width: 80%; /* Adjust form width */
+    margin: 0 auto; /* Center the form */
+  }
+}
+
+/* For tablets and small screens */
+@media screen and (max-width: 768px) {
+  h2.text-center {
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  .registration-form {
+    padding: 15px;
+    max-height: 90vh;
+    overflow-y: auto; /* Allow scrolling for long forms */
+  }
+
+  .rules-content,
+  .confirmation-content,
+  .payment-content {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .rules-content ul {
+    font-size: 14px;
+  }
+}
+
+/* For mobile phones */
+@media screen and (max-width: 480px) {
+  .content {
+    padding: 10px;
+  }
+
+  .left-side h2 {
+    font-size: 18px;
+  }
+
+  .registration-form {
+    padding: 10px;
+    max-width: 95%;
+  }
+
+  h2.text-center {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .rules-content ul {
+    font-size: 12px;
+  }
+
+  .pay-here {
+    font-size: 14px;
+  }
+
+  .rules-content,
+  .confirmation-content,
+  .payment-content {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .payment-content img.qr-code {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Miscellaneous responsive tweaks */
+@media screen and (max-width: 360px) {
+  .rules-content ul,
+  .payment-content p,
+  .confirmation-content p {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  h2.text-center {
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+}

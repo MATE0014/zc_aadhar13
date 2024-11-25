@@ -1,0 +1,182 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+/* Scope styles to our-events-container to avoid affecting other parts of the page */
+.our-events-container {
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 20px;
+  padding-left: 7%;
+  padding-right: 7%;
+  background-image: url("../../images/oureventsbg.jpeg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+  height: 800px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Container for the card */
+.our-events-container .eventcard {
+  width: 100%;
+  height: 350px;
+  perspective: 1000px;
+  display: flex;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #0066cc;
+  transition: box-shadow 0.3s ease-in-out;
+  z-index: 1; /* Ensure that the card is on top of the background */
+}
+
+/* Card hover effect: Rotate and flip smoothly */
+.our-events-container .eventcard:hover {
+  animation: rotationAndFlip 1s ease-in-out;
+  box-shadow: 0 0 20px 5px rgba(0, 204, 255, 0.7);
+}
+
+/* Keyframes for 2 flips (720 degrees total) within 1 second */
+@keyframes rotationAndFlip {
+  0% {
+    transform: rotateY(0deg) translateY(0);
+  }
+  25% {
+    transform: rotateY(180deg) translateY(-10px);
+  }
+  50% {
+    transform: rotateY(180deg) translateY(-20px);
+  }
+  75% {
+    transform: rotateY(360deg) translateY(-10px);
+  }
+  100% {
+    transform: rotateY(720deg) translateY(0);
+  }
+}
+
+/* The front of the card */
+.our-events-container .card-front,
+.our-events-container .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.our-events-container .card-front {
+  background-image: url("../../images/Robo Soccer event.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.our-events-container .card-front .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+}
+
+.our-events-container .eventcard:hover .card-front .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.our-events-container .card-front h3 {
+  font-size: 24px;
+  margin-top: 15px;
+  color: #fff;
+  z-index: 1; /* Ensure text is on top */
+}
+
+/* Make sure the button stays visible and clickable */
+.our-events-container .explore-button {
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #fff;
+  color: #0066cc;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 2; /* Ensure the button stays on top of the front card */
+  position: relative; /* This ensures the button remains clickable */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.our-events-container .explore-button:hover {
+  background-color: #0066cc;
+  color: #fff;
+}
+
+.our-events-container .eventcard:hover .explore-button {
+  animation: showExploreButton 0.5s forwards;
+}
+
+@keyframes showExploreButton {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* The back of the card */
+.our-events-container .card-back {
+  background-color: #004d99;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  z-index: 0; /* Ensure the back of the card stays behind the front */
+}
+
+.our-events-container .card-back h2 {
+  font-size: 28px;
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* Styling for the heading */
+.our-events-heading {
+  font-family: "Roboto", sans-serif; /* Modern font */
+  font-size: 2rem; /* Make the heading large and prominent */
+  color: #c50c0c; /* Dark grey for readability */
+  font-weight: 800; /* Bold text */
+
+  letter-spacing: 3px; /* Add space between letters */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for zoom and color change */
+}
+
+/* Zoom effect on hover for heading */
+.our-events-heading:hover {
+  transform: scale(1.1); /* Zoom in when hovering over the heading */
+  color: #0066cc; /* Change color to blue */
+  text-shadow: 3px 3px 6px rgba(0, 102, 204, 0.3); /* Subtle glow effect */
+}
+

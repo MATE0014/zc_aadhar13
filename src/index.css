@@ -1,0 +1,31 @@
+/* Ensure the html and body fill the entire viewport height */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Full viewport height */
+}
+
+/* Root container should take up the full height of the viewport */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures it covers the viewport height */
+}
+
+/* Header styling */
+header {
+  flex-shrink: 0; /* Ensures the header doesn't shrink */
+}
+
+/* Main content grows to fill available space */
+main {
+  flex-grow: 1; /* Takes up remaining space between header and footer */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer stays at the bottom */
+footer {
+  flex-shrink: 0; /* Prevents the footer from shrinking */
+}

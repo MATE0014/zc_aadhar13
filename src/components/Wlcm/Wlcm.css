@@ -1,0 +1,77 @@
+/* Global styles */
+body,
+html {
+  height: 100%; /* Full height of the viewport */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Choose a generic font */
+  overflow-x: hidden; /* Prevent horizontal scrolling, allow vertical scrolling */
+}
+
+/* Container for the logo and video */
+.logo {
+  position: relative;
+  height: 100vh; /* Full height of the viewport */
+  width: 100%; /* Full width of the viewport */
+  overflow: hidden; /* Keeps content inside the container */
+}
+
+/* Video styling */
+.logo video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* Behind everything */
+}
+
+/* Overlay styling */
+.logo .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Blackish overlay with transparency */
+  z-index: -1; /* Behind the logo, above the video */
+}
+
+/* Image (Logo) styling */
+.logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  max-width: 80%;
+  width: auto;
+  height: auto;
+  z-index: 1; /* Above the overlay */
+}
+
+/* Responsive design */
+
+/* For screens <= 768px (tablets) */
+@media screen and (max-width: 768px) {
+  .logo img {
+    max-width: 60%;
+    max-height: 60%;
+  }
+}
+
+/* For screens <= 480px (small mobile phones) */
+@media screen and (max-width: 480px) {
+  .logo img {
+    max-width: 50%;
+    max-height: 50%;
+  }
+}
+
+/* For screens between 378px and 475px */
+@media screen and (min-width: 378px) and (max-width: 475px) {
+  .logo img {
+    max-width: 70%;
+    max-height: 70%;
+  }
+}

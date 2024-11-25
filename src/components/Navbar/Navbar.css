@@ -1,0 +1,133 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  height: 100px; /* Fixed navbar height */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center; /* Vertically center the logo */
+  justify-content: center;
+  height: 100%; /* Ensure the logo container height matches navbar height */
+}
+
+.logo-image {
+  height: 300px; /* Set logo height */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure logo scales proportionally */
+  max-height: 100%; /* Prevent logo from exceeding navbar height */
+}
+
+/* Navigation Menu */
+.navbar-list {
+  display: flex;
+  flex: 2; /* Menu takes remaining space */
+  justify-content: flex-end; /* Align menu items to the right */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin: 0 10px;
+}
+
+/* Shared styles for both links and buttons */
+.navbar-link,
+.navbar-item button {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  background: none; /* Removes button background */
+  border: none; /* Removes button border */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 0; /* Remove padding from button */
+}
+
+/* Hover and active states for both */
+.navbar-link:hover,
+.navbar-item button:hover {
+  color: #ff0000; /* Highlight color on hover */
+}
+
+/* Optional: Add focus styles for better accessibility */
+.navbar-link:focus,
+.navbar-item button:focus {
+  outline: none; /* Optional: remove default outline */
+  color: #ff0000; /* Highlight color on focus */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .navbar {
+    flex-direction: row; /* Maintain horizontal layout */
+    padding: 10px 15px; /* Reduce padding for smaller screens */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .navbar-logo {
+    flex: 1; /* Allow logo to take more space */
+  }
+
+  .navbar-list {
+    flex: 1; /* Adjust space for menu items */
+    justify-content: flex-end;
+  }
+
+  .navbar-link,
+  .navbar-item button {
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .logo-image {
+    height: 60px; /* Adjust logo size */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack logo and menu vertically */
+    align-items: center;
+  }
+
+  .navbar-logo {
+    margin-bottom: 10px; /* Add space between logo and menu */
+  }
+
+  .navbar-list {
+    flex-direction: column; /* Stack menu items vertically */
+    align-items: center;
+  }
+
+  .navbar-item {
+    margin: 5px 0; /* Adjust spacing between items */
+  }
+
+  .navbar-link,
+  .navbar-item button {
+    font-size: 14px; /* Further reduce font size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 5px 10px; /* Further reduce padding */
+  }
+
+  .logo-image {
+    height: 50px; /* Smaller logo for very small screens */
+  }
+
+  .navbar-link,
+  .navbar-item button {
+    font-size: 12px; /* Smallest font size */
+  }
+}
