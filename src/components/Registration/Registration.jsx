@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Registration.css";
 import eventDetails from "./eventDetails";
+import regbgv from "../../videos/regbgv.mp4";
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -115,7 +116,7 @@ const Registration = () => {
   return (
     <div className="registration-container">
       <video className="background-video" autoPlay loop muted>
-        <source src="../src/videos/regbgv.mp4" type="video/mp4" />
+        <source src={regbgv} type="video/mp4" />
       </video>
       <div className="video-overlay"></div>
       <div className="content">

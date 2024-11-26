@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Overlay from "./FullOverlay";
 import "./EventsPage.css";
+import eventsbgv from "../../videos/eventsbgv.mp4";
+import aadharimg1 from "../../images/Circuitry.png";
+import aadharimg2 from "../../images/Aadhar Logo.png";
+import aadharimg3 from "../../images/Cosmo.png";
 
 const EventsPage = () => {
   const navigate = useNavigate();
@@ -51,7 +55,7 @@ const EventsPage = () => {
       )}
 
       <video
-        src="./src/videos/eventsbgv.mp4"
+        src={eventsbgv}
         loop
         muted
         autoPlay
@@ -77,17 +81,17 @@ const EventsPage = () => {
         </div>
         <div className="aadhar-images">
           <img
-            src="./src/images/Aadhar Logo.png"
+            src={aadharimg1}
             alt="img 1"
             style={{ height: "250px", width: "270px" }}
           />
           <img
-            src="./src/images/Aadhar Logo.png"
+            src={aadharimg2}
             alt="img 2"
             style={{ height: "250px", width: "270px" }}
           />
           <img
-            src="./src/images/Aadhar Logo.png"
+            src={aadharimg3}
             alt="img 3"
             style={{ height: "250px", width: "270px" }}
           />
