@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Registration.css";
 import eventDetails from "./eventDetails";
 import regbgv from "../../videos/regbgv.mp4";
+import Loader from "../Loader/Loader";
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ const Registration = () => {
   const [showConfirmation, setShowConfirmation] = useState(false); // State to toggle confirmation overlay
   const [showPaymentOverlay, setShowPaymentOverlay] = useState(false);
   const [errors, setErrors] = useState({}); // To store validation errors
+  const [showLoader, setShowLoader] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -60,6 +62,7 @@ const Registration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
+      setShowLoader(true); //loading started
       try {
         const response = await fetch(
           "https://zc-aadhar13-backend.onrender.com/register",
@@ -74,12 +77,15 @@ const Registration = () => {
 
         if (response.ok) {
           console.log("Form Data Submitted Successfully:", formData);
+          setShowLoader(false); //loader off - success
           setShowConfirmation(true); // Show confirmation overlay if form is valid
         } else {
           console.error("Failed to submit form data");
+          setShowLoader(false); //loader off - err
         }
       } catch (error) {
         console.error("Error submitting form data:", error);
+        setShowLoader(false); //loader off - err
       }
     }
   };
@@ -343,6 +349,8 @@ const Registration = () => {
         </div>
       )}
 
+      {/* Show loader */}
+      {showLoader && <Loader />}
       {/* Payment Overlay */}
       {showPaymentOverlay && (
         <div className="payment-overlay">

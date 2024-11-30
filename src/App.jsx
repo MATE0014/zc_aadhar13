@@ -8,6 +8,7 @@ import Registration from "./components/Registration/Registration";
 import Events from "./components/EventsPage/EventsPage";
 import countdownVideo from "./videos/cdbgv.mp4";
 import OurEvents from "./components/OurEvents/OurEvents";
+import CreditsSection from "./components/CreditsSection/CreditsSection";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
                 />
                 <div style={{ padding: 0, margin: 0, height: "800px" }}>
                   <OurEvents />
+                </div>
+                <div style={{ padding: 0, margin: 0, height: "400px" }}>
+                  <CreditsSection />
                 </div>
               </>
             }

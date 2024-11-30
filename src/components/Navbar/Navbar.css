@@ -1,33 +1,44 @@
 /* Navbar Container */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Align logo on the left and menu on the right */
   align-items: center;
-  background-color: #333;
-  padding: 10px 20px;
-  height: 100px; /* Fixed navbar height */
+  background: linear-gradient(
+    to right,
+    rgba(255, 99, 71, 0.7),
+    rgba(70, 130, 180, 0.7)
+  ); /* Light reddish-blue gradient */
+  padding: 10px 20px; /* Add padding */
+  height: 80px; /* Default navbar height */
   box-sizing: border-box; /* Include padding in the element's total width and height */
+  position: fixed; /* Fixed navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Keep navbar above other content */
 }
 
 /* Logo Section */
 .navbar-logo {
   display: flex;
   align-items: center; /* Vertically center the logo */
-  justify-content: center;
+  justify-content: flex-start; /* Align logo to the left */
   height: 100%; /* Ensure the logo container height matches navbar height */
+  flex-shrink: 0; /* Prevent logo from shrinking */
+  margin-right: 10px; /* Decrease the gap between the logo and menu */
 }
 
+/* Logo Image */
 .logo-image {
   height: 300px; /* Set logo height */
   width: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensure logo scales proportionally */
-  max-height: 100%; /* Prevent logo from exceeding navbar height */
+  object-fit: contain; /* Preserve aspect ratio */
+  max-height: 100%;
 }
 
 /* Navigation Menu */
 .navbar-list {
   display: flex;
-  flex: 2; /* Menu takes remaining space */
   justify-content: flex-end; /* Align menu items to the right */
   list-style: none;
   margin: 0;
@@ -35,7 +46,7 @@
 }
 
 .navbar-item {
-  margin: 0 10px;
+  margin: 0 15px; /* Space between menu items */
 }
 
 /* Shared styles for both links and buttons */
@@ -43,7 +54,7 @@
 .navbar-item button {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 16px; /* Default font size */
   font-weight: bold;
   transition: color 0.3s ease;
   background: none; /* Removes button background */
@@ -66,15 +77,17 @@
 }
 
 /* Responsive Adjustments */
-@media screen and (max-width: 1024px) {
+
+/* For larger screens (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
   .navbar {
-    flex-direction: row; /* Maintain horizontal layout */
-    padding: 10px 15px; /* Reduce padding for smaller screens */
-    height: auto; /* Allow height to adjust */
+    flex-direction: row; /* Keep items in a row */
+    padding: 10px 30px; /* Increase padding for larger screens */
+    height: 80px; /* Increase navbar height for larger screens */
   }
 
   .navbar-logo {
-    flex: 1; /* Allow logo to take more space */
+    flex-grow: 0; /* Prevent logo from taking too much space */
   }
 
   .navbar-list {
@@ -84,50 +97,66 @@
 
   .navbar-link,
   .navbar-item button {
-    font-size: 14px; /* Reduce font size */
+    font-size: 18px; /* Increase font size for larger screens */
   }
 
+  /* Increase the logo size only for larger screens */
   .logo-image {
-    height: 60px; /* Adjust logo size */
+    height: 300px; /* Increase logo size */
   }
 }
 
+/* For medium screens (max-width: 768px) */
 @media screen and (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Stack logo and menu vertically */
+    flex-direction: row; /* Keep items in a row */
     align-items: center;
+    padding: 10px 20px;
+    height: 70px; /* Adjust navbar height for smaller screens */
   }
 
+  /* Navbar logo stays on the left */
   .navbar-logo {
-    margin-bottom: 10px; /* Add space between logo and menu */
+    justify-content: flex-start; /* Ensure logo stays left aligned */
+    width: auto; /* Allow logo to take only required space */
+    margin-right: 5px; /* Decrease gap between logo and menu */
   }
 
+  /* Navbar list stays in a row with centered items */
   .navbar-list {
-    flex-direction: column; /* Stack menu items vertically */
-    align-items: center;
+    flex-direction: row; /* Keep menu items in a row */
+    justify-content: flex-start; /* Align items to the left */
+    width: auto; /* Do not force the navbar list to take full width */
   }
 
   .navbar-item {
-    margin: 5px 0; /* Adjust spacing between items */
+    margin: 5px 8px; /* Adjust spacing between items */
   }
 
   .navbar-link,
   .navbar-item button {
-    font-size: 14px; /* Further reduce font size */
+    font-size: 16px; /* Slightly increase font size for medium screens */
+  }
+
+  /* Keep logo size at a fixed size for medium screens */
+  .logo-image {
+    height: 120px; /* Logo height stays fixed */
   }
 }
 
+/* For small screens (max-width: 480px) */
 @media screen and (max-width: 480px) {
   .navbar {
-    padding: 5px 10px; /* Further reduce padding */
+    padding: 5px; /* Further reduce padding */
+    height: 60px; /* Reduce navbar height further for small screens */
   }
 
   .logo-image {
-    height: 50px; /* Smaller logo for very small screens */
+    height: 95px; /* Keep the logo at 40% of navbar height for small screens */
   }
 
   .navbar-link,
   .navbar-item button {
-    font-size: 12px; /* Smallest font size */
+    font-size: 14px; /* Small font size for small screens */
   }
 }

@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Overlay from "./FullOverlay";
 import "./EventsPage.css";
 import eventsbgv from "../../videos/eventsbgv.mp4";
-import aadharimg1 from "../../images/Circuitry.png";
+import aadharimg1 from "../../images/Circuitry.jpeg";
 import aadharimg2 from "../../images/Aadhar Logo.png";
-import aadharimg3 from "../../images/Cosmo.png";
+import aadharimg3 from "../../images/Cosmo.jpeg";
 
 const EventsPage = () => {
   const navigate = useNavigate();

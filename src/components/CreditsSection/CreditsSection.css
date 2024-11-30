@@ -1,0 +1,105 @@
+.credits-section {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.credits-title {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.credits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.credits-card {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.credits-card:hover {
+  transform: translateY(-5px);
+}
+
+.credits-card-info {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.credits-card-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.credits-card-role {
+  font-size: 1rem;
+  margin: 5px 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .credits-grid {
+    grid-template-columns: repeat(2, 1fr); /* Change to 2x2 grid */
+    gap: 10px;
+  }
+
+  .credits-title {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    margin-bottom: 15px;
+  }
+
+  .credits-card-info {
+    padding: 8px; /* Adjust padding for smaller cards */
+  }
+
+  .credits-card-name {
+    font-size: 1rem; /* Adjust font size for smaller cards */
+  }
+
+  .credits-card-role {
+    font-size: 0.9rem; /* Adjust font size for smaller cards */
+  }
+}
+
+@media (max-width: 480px) {
+  .credits-title {
+    font-size: 1.2rem; /* Further reduce font size for very small screens */
+  }
+
+  .credits-card-info {
+    padding: 5px; /* Adjust padding for smaller screens */
+  }
+
+  .credits-card-name {
+    font-size: 0.9rem; /* Adjust font size for very small screens */
+  }
+
+  .credits-card-role {
+    font-size: 0.8rem; /* Adjust font size for very small screens */
+  }
+}

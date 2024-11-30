@@ -1,8 +1,10 @@
+/* Global styles for body and html */
 body,
 html {
   margin: 0;
   padding: 0;
 }
+
 /* Scope styles to our-events-container to avoid affecting other parts of the page */
 .our-events-container {
   padding-top: 40px;
@@ -11,7 +13,7 @@ html {
   gap: 20px;
   padding-left: 7%;
   padding-right: 7%;
-  background-image: url("../../images/oureventsbg.jpeg");
+  background-image: url("../../images/oureventsbg.jpg");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,6 +21,17 @@ html {
   height: 800px;
   overflow: hidden;
   box-sizing: border-box;
+}
+
+.eventcard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Blackish overlay */
+  z-index: 1;
 }
 
 /* Container for the card */
@@ -32,7 +45,8 @@ html {
   overflow: hidden;
   background-color: #0066cc;
   transition: box-shadow 0.3s ease-in-out;
-  z-index: 1; /* Ensure that the card is on top of the background */
+  z-index: 1; /* Ensure the card is on top */
+  transform-style: preserve-3d;
 }
 
 /* Card hover effect: Rotate and flip smoothly */
@@ -66,7 +80,7 @@ html {
   width: 100%;
   height: 100%;
   position: absolute;
-  backface-visibility: hidden;
+  backface-visibility: hidden; /* Hide the back of the card */
   transition: transform 0.5s ease;
   display: flex;
   justify-content: center;
@@ -106,7 +120,7 @@ html {
   font-size: 24px;
   margin-top: 15px;
   color: #fff;
-  z-index: 1; /* Ensure text is on top */
+  z-index: 1;
 }
 
 /* Make sure the button stays visible and clickable */
@@ -180,3 +194,53 @@ html {
   text-shadow: 3px 3px 6px rgba(0, 102, 204, 0.3); /* Subtle glow effect */
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .our-events-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  }
+
+  .our-events-container .eventcard {
+    height: 300px; /* Decrease the height of the cards */
+  }
+}
+
+@media (max-width: 768px) {
+  .our-events-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+
+  .our-events-container .eventcard {
+    height: 250px; /* Further decrease the height of the cards */
+  }
+
+  .our-events-heading {
+    font-size: 1.8rem; /* Slightly decrease heading size */
+  }
+}
+
+@media (max-width: 480px) {
+  .our-events-container {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+
+  .our-events-container .eventcard {
+    height: 200px; /* Significantly decrease the height of the cards */
+  }
+
+  .our-events-heading {
+    font-size: 1.5rem; /* Decrease heading size for very small screens */
+  }
+}
+
+/* Additional mobile styles for 'click' devices to trigger hover effects */
+@media (max-width: 768px) {
+  .our-events-container .eventcard:active {
+    animation: rotationAndFlip 1s ease-in-out;
+    box-shadow: 0 0 20px 5px rgba(0, 204, 255, 0.7);
+  }
+
+  .our-events-container .eventcard:active .explore-button {
+    animation: showExploreButton 0.5s forwards;
+  }
+}
