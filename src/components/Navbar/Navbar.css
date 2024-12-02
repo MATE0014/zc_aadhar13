@@ -152,11 +152,11 @@
   }
 
   .logo-image {
-    height: 95px; /* Keep the logo at 40% of navbar height for small screens */
+    height: 90px; /* Keep the logo at 40% of navbar height for small screens */
   }
 
   .navbar-link,
   .navbar-item button {
-    font-size: 14px; /* Small font size for small screens */
+    font-size: 12px; /* Small font size for small screens */
   }
 }

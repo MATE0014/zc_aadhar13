@@ -285,6 +285,12 @@ body {
     font-size: 1.1rem;
     padding: 15px;
   }
+
+  .register-button {
+    width: 30rem; /* Reduce width for medium screens */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    padding: 8px 12px; /* Adjust padding */
+  }
 }
 
 @media (max-width: 768px) {
@@ -316,6 +322,30 @@ body {
   .heading {
     margin-bottom: 5px; /* Reduce gap between heading and description */
   }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .card-left,
+  .card-right {
+    flex: 1 1 100%;
+  }
+
+  .card-left h2 {
+    font-size: 20px;
+  }
+
+  .card-left p {
+    font-size: 14px;
+  }
+
+  .register-button {
+    width: 20rem; /* Further reduce width for tablets */
+    font-size: 0.8rem; /* Smaller font size */
+    padding: 6px 10px; /* Adjust padding for smaller screens */
+    margin-left: 1.5rem; /* Reduce left margin */
+  }
 }
 
 @media (max-width: 480px) {
@@ -344,5 +374,13 @@ body {
 
   .heading {
     margin-bottom: 5px; /* Reduce gap between heading and description */
+  }
+
+  .register-button {
+    width: 80%; /* Set width relative to the container for small devices */
+    font-size: 0.75rem; /* Small font size for mobile */
+    padding: 5px 8px; /* Compact padding */
+    margin-left: auto; /* Center align by removing left margin */
+    margin-right: auto; /* Center align by adding right margin */
   }
 }
