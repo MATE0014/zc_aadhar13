@@ -55,23 +55,23 @@ html {
 /* For screens <= 768px (tablets) */
 @media screen and (max-width: 768px) {
   .logo img {
-    max-width: 60%;
-    max-height: 60%;
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 
 /* For screens <= 480px (small mobile phones) */
 @media screen and (max-width: 480px) {
   .logo img {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 90%;
+    max-height: 90%;
   }
 }
 
 /* For screens between 378px and 475px */
 @media screen and (min-width: 378px) and (max-width: 475px) {
   .logo img {
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 100%;
+    max-height: 100%;
   }
 }

@@ -13,14 +13,20 @@ html {
   gap: 20px;
   padding-left: 7%;
   padding-right: 7%;
-  background-image: url("../../images/oureventsbg.jpg");
+  background-image: url("../../images/oureventsbg.jpeg");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   margin-bottom: 40px;
   height: 800px;
-  overflow: hidden;
+  overflow: scroll;
   box-sizing: border-box;
+  -ms-overflow-style: none; /* Hides scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hides scrollbar for Firefox */
+}
+
+.our-events-container::-webkit-scrollbar {
+  display: none; /* Hides scrollbar for WebKit-based browsers (Chrome, Safari) */
 }
 
 .eventcard::before {
@@ -47,12 +53,6 @@ html {
   transition: box-shadow 0.3s ease-in-out;
   z-index: 1; /* Ensure the card is on top */
   transform-style: preserve-3d;
-}
-
-/* Card hover effect: Rotate and flip smoothly */
-.our-events-container .eventcard:hover {
-  animation: rotationAndFlip 1s ease-in-out;
-  box-shadow: 0 0 20px 5px rgba(0, 204, 255, 0.7);
 }
 
 /* Keyframes for 2 flips (720 degrees total) within 1 second */
@@ -111,11 +111,6 @@ html {
   transition: opacity 0.5s ease, visibility 0s linear 0.5s;
 }
 
-.our-events-container .eventcard:hover .card-front .overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
 .our-events-container .card-front h3 {
   font-size: 24px;
   margin-top: 15px;
@@ -145,19 +140,36 @@ html {
   color: #fff;
 }
 
-.our-events-container .eventcard:hover .explore-button {
-  animation: showExploreButton 0.5s forwards;
+/* Trigger the same animation on click */
+.eventcard.clicked {
+  animation: rotationAndFlip 1s ease-in-out;
+  box-shadow: 0 0 20px 5px rgba(0, 204, 255, 0.7);
 }
 
+/* Trigger the explore button visibility and animation when card is clicked */
+.eventcard.clicked .explore-button {
+  animation: showExploreButton 0.5s forwards; /* Use keyframes to animate visibility */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Add a smoother animation for the explore button */
 @keyframes showExploreButton {
   0% {
     opacity: 0;
+    transform: scale(0.8); /* Start smaller for a pop-in effect */
     visibility: hidden;
   }
   100% {
     opacity: 1;
+    transform: scale(1); /* Back to original size */
     visibility: visible;
   }
+}
+
+/* Optional: Highlight the explore button when visible */
+.eventcard.clicked .explore-button {
+  box-shadow: 0 4px 8px rgba(0, 102, 204, 0.4); /* Add a subtle glow */
 }
 
 /* The back of the card */

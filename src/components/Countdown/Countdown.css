@@ -85,6 +85,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
   transition: transform 0.3s ease-in-out;
+  margin-right: 10px;
 }
 
 /* Add 3D effect on each time unit */

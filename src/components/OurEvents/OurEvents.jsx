@@ -12,11 +12,7 @@ import HackathonImg from "../../images/Hackathon.jpeg";
 
 const OurEvents = () => {
   const navigate = useNavigate();
-  const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
-
-  const handleNavigation = () => {
-    navigate("/events");
-  };
+  const [clickedCardIndex, setClickedCardIndex] = useState(null);
 
   const events = [
     { title: "Open Innovation - MoM", image: MOMImg },
@@ -29,15 +25,23 @@ const OurEvents = () => {
     { title: "Hackathon", image: HackathonImg },
   ];
 
+  const handleCardClick = (index) => {
+    if (clickedCardIndex === index) {
+      // Redirect on the second click
+      navigate("/events");
+    } else {
+      // Set the clicked card index to trigger animation
+      setClickedCardIndex(index);
+    }
+  };
+
   return (
     <div className="our-events-container">
       {events.map((event, index) => (
         <div
           key={index}
-          className={`eventcard ${hoveredCardIndex === index ? "hovered" : ""}`}
-          onMouseEnter={() => setHoveredCardIndex(index)}
-          onMouseLeave={() => setHoveredCardIndex(null)}
-          onClick={handleNavigation}
+          className={`eventcard ${clickedCardIndex === index ? "clicked" : ""}`}
+          onClick={() => handleCardClick(index)}
           style={{
             backgroundImage: `url("${event.image}")`,
             backgroundSize: "cover",

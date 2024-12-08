@@ -17,14 +17,6 @@ const Countdown = ({ targetDate, backgroundVideo }) => {
 
   return (
     <div className="countdown">
-      {/* Background Video */}
-      <video
-        className="countdown-video"
-        src={backgroundVideo}
-        autoPlay
-        loop
-        muted
-      />
       {/* Black Overlay */}
       <div className="countdown-overlay"></div>
       {/* Countdown Content (time boxes only) */}
