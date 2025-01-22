@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Countdown.css";
 
-const Countdown = ({ targetDate, backgroundVideo }) => {
+const Countdown = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
   useEffect(() => {

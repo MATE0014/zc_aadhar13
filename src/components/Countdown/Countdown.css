@@ -29,19 +29,6 @@
   }
 }
 
-/* Background Video */
-.countdown-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
 /* Black Overlay */
 .countdown-overlay {
   position: absolute;
@@ -79,7 +66,7 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  font-size: 10vw; /* Responsive font size based on viewport width */
+  font-size: 8vw; /* Responsive font size based on viewport width */
   min-width: 60px; /* Prevents units from shrinking too small */
   min-height: 4rem; /* Minimum height */
   border-radius: 8px;
@@ -104,7 +91,7 @@
   display: block;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
     0 0 30px rgba(255, 255, 255, 1); /* Neon glowing effect */
-  animation: glowEffect 1.5s ease-in-out infinite; /* Glowing text effect */
+  animation: glowEffect 2.5s ease-in-out infinite; /* Glowing text effect */
 }
 
 /* Glowing effect for countdown numbers */
@@ -119,13 +106,13 @@
   }
   100% {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
-      0 0 20px rgba(255, 255, 255, 0.8);
+      0 0 20px rgba(200, 200, 200, 0.8);
   }
 }
 
 /* Additional style for time unit labels (hours, minutes, seconds) */
 .time-box p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 5px;
   color: rgba(255, 255, 255, 0.7); /* Lighter text for labels */
   opacity: 0.9; /* Slightly transparent */
@@ -134,11 +121,15 @@
 /* Responsive design for small screens */
 @media screen and (max-width: 768px) {
   .time-box {
-    font-size: 12vw; /* Adjust font size based on screen width */
+    font-size: 6vw; /* Adjust overall font size */
+  }
+
+  .time-box span {
+    font-size: 4rem; /* Reduce font size of digits */
   }
 
   .time-box p {
-    font-size: 1rem;
+    font-size: 1rem; /* Slightly reduce the label font size */
   }
 }
 
@@ -147,5 +138,5 @@
   transform: scale(1.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  animation: glowEffect 0.6s ease-in-out infinite;
+  animation: glowEffect 2.5s ease-in-out infinite;
 }
