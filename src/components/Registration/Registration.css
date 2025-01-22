@@ -1,3 +1,7 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* Keep the page scrollable while hiding the form scrollbar */
 html,
 body {
@@ -61,6 +65,7 @@ body {
   width: 100%;
   max-width: 500px;
   padding: 20px;
+  margin-top: 75px;
   background-color: rgba(
     0,
     0,
@@ -85,6 +90,7 @@ h2.text-center {
   color: #fff;
   font-size: 24px;
   margin-bottom: 20px;
+  font-family: "Caesar Dressing", sans-serif;
 }
 
 .form-group {
@@ -94,11 +100,12 @@ h2.text-center {
 label {
   font-size: 18px;
   color: #fff;
+  font-family: "Caesar Dressing", sans-serif;
 }
 
 input,
 select {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   margin-top: 5px;
   font-size: 16px;
@@ -106,6 +113,7 @@ select {
   border-radius: 5px;
   background-color: #333;
   color: #fff;
+  font-family: "Cinzel Decorative", serif;
 }
 
 button.btn-submit {
@@ -162,6 +170,7 @@ button.close-rules:hover {
   justify-content: center;
   align-items: center;
   z-index: 999;
+  font-family: "Caesar Dressing", sans-serif;
 }
 
 .rules-content {
@@ -180,10 +189,12 @@ ul {
 
 .pay-here {
   font-size: 16px;
+  font-family: "Caesar Dressing", sans-serif;
   color: #fff;
   text-align: center;
   margin-top: 15px;
 }
+
 /* Confirmation Overlay */
 .confirmation-overlay {
   position: fixed;

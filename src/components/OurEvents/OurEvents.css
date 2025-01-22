@@ -53,6 +53,7 @@ html {
   transition: box-shadow 0.3s ease-in-out;
   z-index: 1; /* Ensure the card is on top */
   transform-style: preserve-3d;
+  font-family: "Caesar Dressing", sans-serif; /* Apply Caesar Dressing font family */
 }
 
 /* Keyframes for 2 flips (720 degrees total) within 1 second */
@@ -112,7 +113,7 @@ html {
 }
 
 .our-events-container .card-front h3 {
-  font-size: 24px;
+  font-size: 32px;
   margin-top: 15px;
   color: #fff;
   z-index: 1;
@@ -120,7 +121,7 @@ html {
 
 /* Make sure the button stays visible and clickable */
 .our-events-container .explore-button {
-  font-size: 16px;
+  font-size: 25px;
   margin-top: 10px;
   background-color: #fff;
   color: #0066cc;
@@ -133,6 +134,7 @@ html {
   position: relative; /* This ensures the button remains clickable */
   opacity: 0;
   visibility: hidden;
+  font-family: "Caesar Dressing", sans-serif;
 }
 
 .our-events-container .explore-button:hover {
@@ -140,13 +142,11 @@ html {
   color: #fff;
 }
 
-/* Trigger the same animation on click */
 .eventcard.clicked {
   animation: rotationAndFlip 1s ease-in-out;
   box-shadow: 0 0 20px 5px rgba(0, 204, 255, 0.7);
 }
 
-/* Trigger the explore button visibility and animation when card is clicked */
 .eventcard.clicked .explore-button {
   animation: showExploreButton 0.5s forwards; /* Use keyframes to animate visibility */
   opacity: 1;
@@ -188,7 +188,7 @@ html {
 
 /* Styling for the heading */
 .our-events-heading {
-  font-family: "Roboto", sans-serif; /* Modern font */
+  font-family: "Caesar Dressing", sans-serif; /* Apply Caesar Dressing font family */
   font-size: 2rem; /* Make the heading large and prominent */
   color: #c50c0c; /* Dark grey for readability */
   font-weight: 800; /* Bold text */
@@ -199,7 +199,6 @@ html {
   transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for zoom and color change */
 }
 
-/* Zoom effect on hover for heading */
 .our-events-heading:hover {
   transform: scale(1.1); /* Zoom in when hovering over the heading */
   color: #0066cc; /* Change color to blue */

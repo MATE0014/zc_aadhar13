@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap");
+
+.credits-title,
+.credits-card-name,
+.credits-card-role,
+.credits-card-info,
+.icon-link {
+  font-family: "Caesar Dressing", sans-serif; /* Fallback to sans-serif if Caesar Dressing is not available */
+}
+
 .credits-section {
   height: 400px;
   background-size: cover;
@@ -12,7 +22,7 @@
 
 .credits-title {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }

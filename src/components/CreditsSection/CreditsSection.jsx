@@ -12,36 +12,36 @@ import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 const CreditsSection = () => {
   const developers = [
     {
-      name: "Shristi Sharma",
-      role: "Full Stack Developer",
-      image: shristiimg,
-      bgSize: "contain",
-      linkedin: "https://www.linkedin.com/in/shristi-sharma",
-      email: "shristi@example.com",
-    },
-    {
       name: "Moxit Rewar",
       role: "Full Stack Developer",
       image: moxitimg,
       bgSize: "contain",
-      linkedin: "https://www.linkedin.com/in/moxit-rewar",
-      email: "moxit@example.com",
+      linkedin: "https://www.linkedin.com/in/moxit-rewar-b54928290",
+      email: "moxitrewar777@gmail.com",
+    },
+    {
+      name: "Shristi Sharma",
+      role: "Full Stack Developer",
+      image: shristiimg,
+      bgSize: "contain",
+      linkedin: "https://www.linkedin.com/in/shristi-sharma-b9a0a0291",
+      email: "2023pcecashristi050@poornima.org",
     },
     {
       name: "Saksham Shakya",
       role: "UI/UX Designer",
       image: sakshamimg,
       bgSize: "contain",
-      linkedin: "https://www.linkedin.com/in/saksham-shakya",
-      email: "saksham@example.com",
+      linkedin: "https://www.linkedin.com/in/saksham-shakya-8540282b7",
+      email: "2023pcecasaksham044@poornima.org",
     },
     {
       name: "Prakriti",
       role: "Frontend Developer",
       image: prakritiimg,
       bgSize: "contain",
-      linkedin: "https://www.linkedin.com/in/prakriti",
-      email: "prakriti@example.com",
+      linkedin: "https://www.linkedin.com/in/prakriti-69b832167",
+      email: "2023pcecsprakriti122@poornima.org",
     },
   ];
 

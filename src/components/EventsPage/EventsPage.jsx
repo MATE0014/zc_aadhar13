@@ -9,18 +9,15 @@ import aadharimg3 from "../../images/Cosmo.jpeg";
 
 const EventsPage = () => {
   const navigate = useNavigate();
-  const [showOverlay, setShowOverlay] = useState(false); // State to control overlay visibility
-  const [overlayMessage, setOverlayMessage] = useState(""); // State to control the overlay message
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [overlayMessage, setOverlayMessage] = useState("");
 
   useEffect(() => {
     const cards = document.querySelectorAll(".card");
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    };
+    const lazyVideos = document.querySelectorAll(".lazy-video");
+    const options = { root: null, rootMargin: "0px", threshold: 0.5 };
 
-    const observer = new IntersectionObserver((entries) => {
+    const cardObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
@@ -28,9 +25,22 @@ const EventsPage = () => {
       });
     }, options);
 
-    cards.forEach((card) => {
-      observer.observe(card);
-    });
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const video = entry.target;
+          const videoSrc = video.getAttribute("data-src");
+          if (videoSrc) {
+            video.src = videoSrc; // Set the video source
+            video.load(); // Start loading the video
+          }
+          observer.unobserve(video); // Stop observing once the video is loaded
+        }
+      });
+    }, options);
+
+    cards.forEach((card) => cardObserver.observe(card));
+    lazyVideos.forEach((video) => videoObserver.observe(video));
   }, []);
 
   const handleRegisterClick = (eventTitle) => {
@@ -38,14 +48,14 @@ const EventsPage = () => {
       setOverlayMessage(
         "Sorry, the registrations are full this year. Please try again in Aadhar 14."
       );
-      setShowOverlay(true); // Show the overlay when clicked
+      setShowOverlay(true);
     } else {
-      navigate("/registration"); // For other events, navigate to registration page
+      navigate("/registration");
     }
   };
 
   const closeOverlay = () => {
-    setShowOverlay(false); // Close the overlay
+    setShowOverlay(false);
   };
 
   return (
@@ -53,7 +63,6 @@ const EventsPage = () => {
       {showOverlay && (
         <Overlay message={overlayMessage} onClose={closeOverlay} />
       )}
-
       <video
         src={eventsbgv}
         loop
@@ -108,18 +117,22 @@ const EventsPage = () => {
         {eventsData.map((event, index) => (
           <div className="card" key={index}>
             <div className="card-left">
-              <h2>{event.title}</h2>
-              <p>{event.description}</p>
+              <h2 className="event-title">{event.title}</h2>
+              <p className="event-desc">{event.description}</p>
               <button
                 className="register-button"
-                onClick={() => handleRegisterClick(event.title)} // Trigger overlay or registration
+                onClick={() => handleRegisterClick(event.title)}
               >
                 Register Now
               </button>
             </div>
             <div className="card-gap"></div>
             <div className="card-right">
-              <video src={event.video} controls></video>
+              <video
+                className="lazy-video"
+                data-src={event.video}
+                controls
+              ></video>
             </div>
           </div>
         ))}

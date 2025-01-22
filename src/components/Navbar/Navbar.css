@@ -1,4 +1,6 @@
-/* Navbar Container */
+/* Import the Caesar Dressing font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap");
+
 .navbar {
   display: flex;
   justify-content: space-between; /* Align logo on the left and menu on the right */
@@ -16,6 +18,7 @@
   left: 0;
   width: 100%;
   z-index: 1000; /* Keep navbar above other content */
+  font-family: "Caesar Dressing", cursive; /* Apply the Caesar Dressing font */
 }
 
 /* Logo Section */
@@ -61,6 +64,7 @@
   border: none; /* Removes button border */
   cursor: pointer; /* Pointer cursor on hover */
   padding: 0; /* Remove padding from button */
+  font-family: "Caesar Dressing", cursive; /* Apply Caesar Dressing font */
 }
 
 /* Hover and active states for both */
@@ -97,7 +101,7 @@
 
   .navbar-link,
   .navbar-item button {
-    font-size: 18px; /* Increase font size for larger screens */
+    font-size: 25px; /* Increase font size for larger screens */
   }
 
   /* Increase the logo size only for larger screens */
@@ -135,7 +139,7 @@
 
   .navbar-link,
   .navbar-item button {
-    font-size: 16px; /* Slightly increase font size for medium screens */
+    font-size: 18px; /* Slightly increase font size for medium screens */
   }
 
   /* Keep logo size at a fixed size for medium screens */
@@ -157,6 +161,6 @@
 
   .navbar-link,
   .navbar-item button {
-    font-size: 12px; /* Small font size for small screens */
+    font-size: 14px; /* Small font size for small screens */
   }
 }

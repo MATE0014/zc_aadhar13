@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 * Basic Reset */ * {
   margin: 0;
   padding: 0;
@@ -11,7 +14,6 @@ body {
 }
 
 body {
-  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   position: relative;
   overflow-y: scroll; /* Enable vertical scrolling */
@@ -57,7 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
   color: white;
   transform: translateX(-100%); /* Start off the left side */
   opacity: 0; /* Initially hidden */
@@ -153,8 +155,8 @@ body {
 
 /* Styling for the heading */
 .heading {
-  font-family: "Roboto", sans-serif; /* Modern font */
-  font-size: 2rem; /* Make the heading large and prominent */
+  font-family: "Caesar Dressing", sans-serif; /* Modern font */
+  font-size: 2.5rem; /* Make the heading large and prominent */
   color: #c50c0c; /* Dark grey for readability */
   font-weight: 800; /* Bold text */
 
@@ -173,9 +175,9 @@ body {
 
 /* Styling for the description */
 .aadhar-text .description {
-  font-family: "Arial", sans-serif;
+  font-family: "Cinzel Decorative", sans-serif;
   font-size: 1.2rem;
-  color: #738472e6; /* Medium grey for description text */
+  color: #eff2ef; /* Medium grey for description text */
   line-height: 1.8;
   text-align: justify;
   opacity: 0; /* Start as invisible */
@@ -206,7 +208,8 @@ body {
   border-radius: 8px; /* Curvish border */
   padding: 8px 16px; /* Adjust padding for button size */
   width: 45rem; /* Reduce width */
-  font-size: 1rem; /* Button font size */
+  font-size: 1.2rem; /* Button font size */
+  font-family: "Caesar Dressing", "sans-serif";
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   margin-left: 2.2rem;
@@ -288,7 +291,7 @@ body {
 
   .register-button {
     width: 30rem; /* Reduce width for medium screens */
-    font-size: 0.9rem; /* Slightly smaller font size */
+    font-size: 1.2rem; /* Slightly smaller font size */
     padding: 8px 12px; /* Adjust padding */
   }
 }
@@ -342,7 +345,7 @@ body {
 
   .register-button {
     width: 20rem; /* Further reduce width for tablets */
-    font-size: 0.8rem; /* Smaller font size */
+    font-size: 1rem; /* Smaller font size */
     padding: 6px 10px; /* Adjust padding for smaller screens */
     margin-left: 1.5rem; /* Reduce left margin */
   }
@@ -378,9 +381,64 @@ body {
 
   .register-button {
     width: 80%; /* Set width relative to the container for small devices */
-    font-size: 0.75rem; /* Small font size for mobile */
+    font-size: 0.9rem; /* Small font size for mobile */
     padding: 5px 8px; /* Compact padding */
     margin-left: auto; /* Center align by removing left margin */
     margin-right: auto; /* Center align by adding right margin */
+  }
+}
+
+/* Updated Font Families for event-title and event-desc */
+.event-title {
+  font-family: "Caesar Dressing", sans-serif;
+  font-size: 2rem; /* Set a base size for the event title */
+  color: #c50c0c; /* Dark grey for readability */
+  font-weight: 800; /* Bold text */
+  letter-spacing: 2px; /* Add space between letters */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 10px; /* Reduced margin between heading and description */
+}
+
+.event-desc {
+  font-family: "Cinzel Decorative", sans-serif;
+  font-size: 1rem; /* Set a base size for the event description */
+  color: #eff2ef; /* Medium grey for description text */
+  line-height: 1.6;
+  text-align: justify;
+  opacity: 0.9; /* Slightly transparent */
+  max-width: 100%; /* Ensure the description takes the same width as the heading */
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Responsive Design Adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .event-title {
+    font-size: 1.8rem; /* Slightly smaller font size for medium screens */
+  }
+
+  .event-desc {
+    font-size: 0.9rem; /* Adjust smaller font size for medium screens */
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-title {
+    font-size: 1.6rem; /* Adjust for tablets */
+  }
+
+  .event-desc {
+    font-size: 0.8rem; /* Further reduce font size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .event-title {
+    font-size: 1.4rem; /* Further reduce font size for small devices */
+  }
+
+  .event-desc {
+    font-size: 0.7rem; /* Smallest font size for mobile devices */
   }
 }

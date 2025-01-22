@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 .footer {
   background-color: #111;
   height: 100%;
@@ -42,26 +45,30 @@
 
 .footer-title {
   font-size: 20px;
+  font-family: "Caesar Dressing", sans-serif;
   margin-bottom: 10px;
   color: #0843a5;
 }
 
 .footer-links {
+  font-family: "Caesar Dressing", sans-serif;
   list-style: none;
   padding: 0;
 }
 
 .contact-title {
   font-size: 20px;
+  font-family: "Caesar Dressing", sans-serif;
   margin-bottom: 10px;
   color: #0843a5;
-  padding-right: 150px;
+  padding-right: 100px;
 }
 .footer-contact {
   list-style: none;
   padding: 0;
   line-height: 1.5;
-  text-align: left;
+  text-align: center;
+  font-family: "Caesar Dressing", sans-serif;
   padding-left: 100px;
 }
 
