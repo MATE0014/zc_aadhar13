@@ -28,7 +28,7 @@ function App() {
               <>
                 <Wlcm />
                 <Countdown
-                  targetDate="2025-02-14T23:59:59"
+                  targetDate="2025-02-21T23:59:59"
                   backgroundVideo={countdownVideo}
                 />
                 <div style={{ padding: 0, margin: 0, height: "800px" }}>

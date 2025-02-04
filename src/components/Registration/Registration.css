@@ -117,14 +117,15 @@ select {
 }
 
 button.btn-submit {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   background-color: #007bff;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "Caesar Dressing", serif;
 }
 
 button.btn-view-rules {
@@ -249,15 +250,16 @@ button.close-confirmation:hover {
 
 /* Pay Here Button */
 button.btn-pay-here {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   background-color: #ffc107; /* Yellow button */
   color: #000;
-  font-size: 18px;
+  font-size: 22px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  font-family: "Caesar Dressing", serif;
 }
 
 button.btn-pay-here:hover {

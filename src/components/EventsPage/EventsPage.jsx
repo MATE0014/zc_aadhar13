@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Overlay from "./FullOverlay";
 import "./EventsPage.css";
 import eventsbgv from "../../videos/eventsbgv.mp4";
-import aadharimg1 from "../../images/Circuitry.jpeg";
-import aadharimg2 from "../../images/Aadhar Logo.png";
-import aadharimg3 from "../../images/Cosmo.jpeg";
+import aadharimg1 from "/images/aadhar1.webp";
+import aadharimg2 from "/images/aadhar2.webp";
+import aadharimg3 from "/images/aadhar3.webp";
 
 const EventsPage = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const EventsPage = () => {
 
   useEffect(() => {
     const cards = document.querySelectorAll(".card");
-    const lazyVideos = document.querySelectorAll(".lazy-video");
+    const lazyImages = document.querySelectorAll(".lazy-image");
     const options = { root: null, rootMargin: "0px", threshold: 0.5 };
 
     const cardObserver = new IntersectionObserver((entries) => {
@@ -25,22 +25,22 @@ const EventsPage = () => {
       });
     }, options);
 
-    const videoObserver = new IntersectionObserver((entries, observer) => {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const video = entry.target;
-          const videoSrc = video.getAttribute("data-src");
-          if (videoSrc) {
-            video.src = videoSrc; // Set the video source
-            video.load(); // Start loading the video
+          const img = entry.target;
+          const imgSrc = img.getAttribute("data-src");
+          if (imgSrc) {
+            img.src = imgSrc; // Set the image source
+            img.classList.remove("lazy-image"); // Remove the lazy-image class
           }
-          observer.unobserve(video); // Stop observing once the video is loaded
+          observer.unobserve(img); // Stop observing once the image is loaded
         }
       });
     }, options);
 
     cards.forEach((card) => cardObserver.observe(card));
-    lazyVideos.forEach((video) => videoObserver.observe(video));
+    lazyImages.forEach((img) => imageObserver.observe(img));
   }, []);
 
   const handleRegisterClick = (eventTitle) => {
@@ -89,21 +89,9 @@ const EventsPage = () => {
           </p>
         </div>
         <div className="aadhar-images">
-          <img
-            src={aadharimg1}
-            alt="img 1"
-            style={{ height: "250px", width: "270px" }}
-          />
-          <img
-            src={aadharimg2}
-            alt="img 2"
-            style={{ height: "250px", width: "270px" }}
-          />
-          <img
-            src={aadharimg3}
-            alt="img 3"
-            style={{ height: "250px", width: "270px" }}
-          />
+          <img src={aadharimg1} alt="img 1" />
+          <img src={aadharimg2} alt="img 2" />
+          <img src={aadharimg3} alt="img 3" />
         </div>
       </div>
 
@@ -128,11 +116,11 @@ const EventsPage = () => {
             </div>
             <div className="card-gap"></div>
             <div className="card-right">
-              <video
-                className="lazy-video"
-                data-src={event.video}
-                controls
-              ></video>
+              <img
+                className="lazy-image"
+                data-src={event.image}
+                alt={event.title}
+              />
             </div>
           </div>
         ))}
@@ -143,52 +131,46 @@ const EventsPage = () => {
 
 const eventsData = [
   {
-    title: "ROBO WAR",
-    description:
-      "The primary tactic used by either side, whether it be defending or attacking, is taken into account while creating the bots. There is a 5 person maximum per squad. Five minutes will be allotted for each match. Only timeouts lasting 30 seconds and a maximum of twice a game allow teams to shift their bots. It is not permitted to strike engines or cables, just certain body parts.",
-    video: "./src/videos/ROBOWAR.mp4",
-  },
-  {
     title: "CIRCUITRY",
     description:
       "Circuitry is the science of designing electronic or electric circuits, or it is the detailed layout of an electric circuit. The most crucial component of electronics is circuitry.",
-    video: "./src/videos/CIRCUITRY.mp4",
+    image: "/images/circuitry.webp",
   },
   {
     title: "MACHINE O MANIA",
     description:
       "A hand on opportunities to explore and expand your imagination. Design the machine you desire.",
-    video: "./src/videos/MOM.mp4",
+    image: "/images/mom.webp",
   },
   {
     title: "ROBO SOCCER",
     description:
       "The basic purpose of this game is to direct your robots to score as many goals as you can. A specialized autonomous robot is a soccer robot.",
-    video: "./src/videos/ROBOSOCCER.mp4",
+    image: "/images/robosoccer.webp",
   },
   {
     title: "SPUD GUN",
     description:
       "A toy gun that shoots a potato plug by forcing the air in the barrel to condense.",
-    video: "./src/videos/SPUDGUN.mp4",
+    image: "/images/spudgun.webp",
   },
   {
     title: "COSMO CLENCH",
     description:
       "The participating teams must build a manually controlled gripper bot (wired or wireless).",
-    video: "./src/videos/COSMO CLENCH.mp4",
+    image: "/images/cosmo.webp",
   },
   {
     title: "ROBO RACE",
     description:
       "Autonomous or wired racing robots are the focus of the competition.",
-    video: "./src/videos/ROBO RACE.mp4",
+    image: "/images/race.webp",
   },
   {
     title: "MICROMOUSE",
     description:
       "A Micromouse is a small autonomous robotic vehicle designed to solve and navigate through a maze.",
-    video: "./src/videos/MICROMOUSE.mp4",
+    image: "/images/race.webp",
   },
 ];
 

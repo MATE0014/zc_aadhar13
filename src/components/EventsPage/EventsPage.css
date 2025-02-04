@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-* Basic Reset */ * {
+/* Basic Reset */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -66,7 +67,7 @@ body {
   transition: transform 1s ease, opacity 1s ease, scale 1s ease; /* Smooth entry and zoom */
 }
 
-/* Right side (video) */
+/* Right side (image) */
 .card-right {
   flex: 0 0 30%; /* Takes up 30% of the card width */
   display: flex;
@@ -78,10 +79,11 @@ body {
   transition: transform 1s ease, opacity 1s ease, scale 1s ease; /* Smooth entry and zoom */
 }
 
-.card-right video {
+.card-right img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 10px; /* Rounded corners for the image */
 }
 
 /* Gap between left and right card */
@@ -159,7 +161,6 @@ body {
   font-size: 2.5rem; /* Make the heading large and prominent */
   color: #c50c0c; /* Dark grey for readability */
   font-weight: 800; /* Bold text */
-
   letter-spacing: 3px; /* Add space between letters */
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   margin-bottom: 10px; /* Reduced margin between heading and description */
