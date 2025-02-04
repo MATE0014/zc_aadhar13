@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import zirconLogo from "../../images/zircon logo.png";
+import zirconLogo from "/images/zircon logo.webp";
 
 const Navbar = () => {
   const eventsRef = useRef(null); // Ref for the EVENTS section

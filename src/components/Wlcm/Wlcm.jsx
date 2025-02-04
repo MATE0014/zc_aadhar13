@@ -1,7 +1,7 @@
 import React from "react";
 import "./Wlcm.css";
-import backgroundImg from "../../images/logobackground.jpeg";
-import logoImg from "../../images/Aadhar Logo.png"; // Update path as per your project
+import backgroundImg from "/images/logobackground.webp";
+import logoImg from "/images/Aadhar Logo.webp";
 
 const Wlcm = () => {
   return (

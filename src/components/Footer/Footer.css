@@ -3,79 +3,69 @@
 
 .footer {
   background-color: #111;
-  height: 100%;
   color: white;
-  padding: 20px 0;
+  padding: 30px 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   max-width: 1200px;
+  padding: 0 20px;
 }
 
+/* Footer Logo */
 .footer-logo-section {
-  flex: 1; /* Allows the logo section to occupy its own space */
+  flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 .footer-logo-section img {
-  width: 300px; /* Fixed width of the logo */
+  width: 200px;
+  max-width: 100%;
   height: auto;
 }
 
+/* Footer Sections */
 .footer-section {
-  flex: 1; /* Allows sections to be evenly spaced */
-  text-align: center; /* Centers the content within the section */
+  flex: 1;
+  text-align: center;
 }
 
+/* Quick Links */
 .quick-links {
   text-align: center;
 }
 
-.contact-us {
-  text-align: right; /* Aligns the Contact Us section to the right */
-}
-
-.footer-title {
-  font-size: 20px;
+/* Increased Font Size */
+.footer-title,
+.contact-title {
+  font-size: 24px; /* Increased by 4px */
   font-family: "Caesar Dressing", sans-serif;
   margin-bottom: 10px;
   color: #0843a5;
 }
 
+/* Links */
 .footer-links {
   font-family: "Caesar Dressing", sans-serif;
   list-style: none;
   padding: 0;
 }
 
-.contact-title {
-  font-size: 20px;
-  font-family: "Caesar Dressing", sans-serif;
-  margin-bottom: 10px;
-  color: #0843a5;
-  padding-right: 100px;
-}
-.footer-contact {
-  list-style: none;
-  padding: 0;
-  line-height: 1.5;
-  text-align: center;
-  font-family: "Caesar Dressing", sans-serif;
-  padding-left: 100px;
-}
-
 .footer-link {
   color: white;
   text-decoration: none;
-  margin-bottom: 8px;
+  font-size: 20px; /* Increased by 4px */
+  margin-bottom: 10px;
   display: block;
   transition: color 0.3s ease;
 }
@@ -84,24 +74,73 @@
   color: #ff0000;
 }
 
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
+/* Contact Section */
+.contact-us {
+  text-align: right;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  line-height: 1.7;
+  text-align: right;
+  font-family: "Caesar Dressing", sans-serif;
+  font-size: 20px; /* Increased by 4px */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
   .footer-container {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .footer-logo-section {
-    margin-bottom: 20px;
     justify-content: center;
+    margin-bottom: 20px;
   }
 
   .footer-section {
+    width: 100%;
     margin-bottom: 20px;
-    text-align: center; /* Center all sections for smaller screens */
   }
 
   .contact-us {
-    text-align: center; /* Override right alignment for small screens */
+    text-align: center;
+  }
+
+  .footer-contact {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-title,
+  .contact-title {
+    font-size: 22px; /* Increased by 4px */
+  }
+
+  .footer-link {
+    font-size: 18px; /* Increased by 4px */
+  }
+
+  .footer-contact {
+    font-size: 18px; /* Increased by 4px */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-title,
+  .contact-title {
+    font-size: 20px; /* Increased by 4px */
+  }
+
+  .footer-link {
+    font-size: 16px; /* Increased by 4px */
+  }
+
+  .footer-contact {
+    font-size: 16px; /* Increased by 4px */
   }
 }

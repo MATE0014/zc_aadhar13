@@ -129,19 +129,40 @@ button.btn-submit {
 }
 
 button.btn-view-rules {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   background-color: #28a745;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  font-family: "Caesar Dressing", serif;
 }
 
 button.btn-view-rules:hover {
   background-color: #218838;
+}
+
+.btn-download-rulebook {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #17a2b8; /* Cyan color */
+  color: white;
+  font-size: 22px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 10px;
+  font-family: "Caesar Dressing", serif;
+}
+
+.btn-download-rulebook:hover {
+  background-color: #138496;
 }
 
 button.close-rules {
@@ -149,11 +170,12 @@ button.close-rules {
   padding: 10px;
   background-color: #dc3545;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  font-family: "Caesar Dressing", serif;
 }
 
 button.close-rules:hover {
@@ -171,7 +193,6 @@ button.close-rules:hover {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  font-family: "Caesar Dressing", sans-serif;
 }
 
 .rules-content {
@@ -181,6 +202,12 @@ button.close-rules:hover {
   border-radius: 10px;
   width: 80%;
   max-width: 600px;
+  font-family: "Cinzel Decorative", serif;
+}
+
+.rules-overlay-heading {
+  font-family: "Caesar Dressing", serif;
+  font-size: 22px;
 }
 
 ul {
@@ -293,11 +320,41 @@ button.btn-pay-here:hover {
 .payment-content h3 {
   font-size: 24px;
   margin-bottom: 15px;
+  font-family: "Caesar Dressing", serif;
 }
 
 .payment-content p {
   font-size: 18px;
   margin-bottom: 20px;
+  font-family: "Cinzel Decorative", serif;
+}
+
+.upi-section {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.upi-text {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.copy-upi-btn {
+  padding: 10px;
+  background-color: #28a745; /* Green button */
+  color: white;
+  font-size: 22px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Caesar Dressing", serif;
+  margin-bottom: 1rem;
+}
+
+.copy-upi-btn:hover {
+  background-color: #218838;
 }
 
 .payment-content img.qr-code {
@@ -312,10 +369,11 @@ button.close-payment {
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "Caesar Dressing", serif;
 }
 
 button.close-payment:hover {
@@ -344,6 +402,7 @@ button.close-payment:hover {
 
   .left-side {
     text-align: center;
+    margin-top: 3rem;
   }
 
   .right-side {
@@ -390,6 +449,10 @@ button.close-payment:hover {
 
   .rules-content ul {
     font-size: 14px;
+  }
+
+  .left-side {
+    margin-top: 2rem;
   }
 }
 
@@ -444,6 +507,10 @@ button.close-payment:hover {
   .payment-content img.qr-code {
     width: 150px;
     height: 150px;
+  }
+
+  .left-side {
+    margin-top: 2rem;
   }
 }
 

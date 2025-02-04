@@ -13,7 +13,7 @@ html {
   gap: 20px;
   padding-left: 7%;
   padding-right: 7%;
-  background-image: url("../../images/oureventsbg.jpeg");
+  background-image: url("/images/oureventsbg.webp");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./OurEvents.css";
-import MOMImg from "../../images/MOM.jpeg";
-import CircuitryImg from "../../images/Circuitry.jpeg";
-import SoccerImg from "../../images/Soccer.jpeg";
-import SpudGunImg from "../../images/SpudGun.jpeg";
-import CosmoImg from "../../images/Cosmo.jpeg";
-import RaceImg from "../../images/RC.jpeg";
-import MicroMouseImg from "../../images/MicroMouse.jpeg";
-import HackathonImg from "../../images/Hackathon.jpeg";
+import MOMImg from "/images/MOM-card.webp";
+import CircuitryImg from "/images/Circuitry-card.webp";
+import SoccerImg from "/images/Soccer-card.webp";
+import SpudGunImg from "/images/SpudGun-card.webp";
+import CosmoImg from "/images/Cosmo-card.webp";
+import RaceImg from "/images/RC-card.webp";
+import MicroMouseImg from "/images/MicroMouse-card.webp";
+import HackathonImg from "/images/Hackathon-card.webp";
 
 const OurEvents = () => {
   const navigate = useNavigate();

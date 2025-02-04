@@ -1,11 +1,11 @@
 import React from "react";
 import "./CreditsSection.css";
 
-import shristiimg from "../../images/shristi.png";
-import moxitimg from "../../images/moxit.png";
-import sakshamimg from "../../images/saksham.png";
-import prakritiimg from "../../images/prakriti.png";
-import backgroundImage from "../../images/creditsbg.jpeg";
+import shristiimg from "/images/shristi.webp";
+import moxitimg from "/images/moxit.webp";
+import sakshamimg from "/images/saksham.webp";
+import prakritiimg from "/images/prakriti.png";
+import backgroundImage from "/images/creditsbg.webp";
 
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 

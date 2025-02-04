@@ -22,6 +22,7 @@ const Registration = () => {
   const [showPaymentOverlay, setShowPaymentOverlay] = useState(false);
   const [errors, setErrors] = useState({}); // To store validation errors
   const [showLoader, setShowLoader] = useState(false);
+  const [copied, setCopied] = useState(false); //copy upi id button
 
   const handleChange = (e) => {
     setFormData({
@@ -314,24 +315,34 @@ const Registration = () => {
           </form>
         </div>
       </div>
-
       {/* Overlay for Event Rules */}
       {showRules && (
         <div className="rules-overlay">
           <div className="rules-content">
-            <h3>Rules for {formData.event}:</h3>
+            <h3 className="rules-overlay-heading">
+              Rules for {formData.event}:
+            </h3>
             <ul>
               {eventDetails.rules[formData.event].map((rule, index) => (
                 <li key={index}>{rule}</li>
               ))}
             </ul>
+
+            {/* Download Rulebook Button */}
+            <a
+              href="/rulebook.pdf"
+              download="Aadhar_13_Rulebook.pdf"
+              className="btn-download-rulebook"
+            >
+              Download Rulebook
+            </a>
+
             <button className="close-rules" onClick={() => setShowRules(false)}>
               Close
             </button>
           </div>
         </div>
       )}
-
       {/* Confirmation Overlay */}
       {showConfirmation && (
         <div className="confirmation-overlay show">
@@ -348,23 +359,49 @@ const Registration = () => {
           </div>
         </div>
       )}
-
       {/* Show loader */}
       {showLoader && <Loader />}
+
       {/* Payment Overlay */}
       {showPaymentOverlay && (
         <div className="payment-overlay">
           <div className="payment-content">
             <h3>Scan QR to Pay</h3>
-            <p>
-              Please scan the QR code below using any UPI app to complete the
-              payment.
-            </p>
+            <p>Please scan the QR code below using any UPI app.</p>
+
+            {/* QR Code Image */}
             <img
-              src="../src/images/Aadhar Logo.png"
+              src="/images/payment_qr.webp"
               alt="QR Code"
               className="qr-code"
             />
+
+            {/* Amount to be Paid */}
+            {formData.event && (
+              <p className="amount-text">
+                <strong>Amount to be Paid:</strong>{" "}
+                {eventDetails.RegFee[formData.event]?.[0] ||
+                  "Contact Us For Amount"}
+              </p>
+            )}
+
+            {/* UPI ID with Copy Button */}
+            <div className="upi-section">
+              <p className="upi-text">
+                UPI ID: <strong>blankupi@givemeupi</strong>
+              </p>
+              <button
+                className="copy-upi-btn"
+                onClick={() => {
+                  navigator.clipboard.writeText("blankupi@givemeupi");
+                  setCopied(true); // Change button text
+                  setTimeout(() => setCopied(false), 3000); // Reset after 2s
+                }}
+              >
+                {copied ? "UPI ID copied to clipboard!" : "Copy UPI ID"}
+              </button>
+            </div>
+
             <button className="close-payment" onClick={closePaymentOverlay}>
               Close
             </button>

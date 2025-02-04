@@ -1,5 +1,5 @@
 import React from "react";
-import logoImg from "../../images/zircon logo.png"; // Ensure correct path
+import logoImg from "/images/zircon logo.webp";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
