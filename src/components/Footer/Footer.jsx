@@ -47,7 +47,7 @@ const Footer = () => {
           <h4 className="contact-title">Contact Us</h4>
           <ul className="footer-contact">
             <li>Email: zirconclub@poornima.org</li>
-            <li>Phone: +91 6350101543</li>
+            <li>Phone: +91 78518 83201</li>
             <li>Address: Zircon Club, PCE, Jaipur</li>
           </ul>
         </div>

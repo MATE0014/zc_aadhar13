@@ -19,8 +19,28 @@ const EventsPage = () => {
 
     const cardObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
+        const card = entry.target;
+        const cardLeft = card.querySelector(".card-left");
+        const cardRight = card.querySelector(".card-right");
+
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          card.classList.add("visible");
+
+          if (cardLeft && cardRight) {
+            cardLeft.style.transform = "translateX(0) scale(1)";
+            cardLeft.style.opacity = "1";
+            cardRight.style.transform = "translateX(0) scale(1)";
+            cardRight.style.opacity = "1";
+          }
+        } else {
+          card.classList.remove("visible");
+
+          if (cardLeft && cardRight) {
+            cardLeft.style.transform = "translateX(-100%) scale(0.8)";
+            cardLeft.style.opacity = "0";
+            cardRight.style.transform = "translateX(100%) scale(0.8)"; // Reset in opposite direction
+            cardRight.style.opacity = "0";
+          }
         }
       });
     }, options);
@@ -31,22 +51,27 @@ const EventsPage = () => {
           const img = entry.target;
           const imgSrc = img.getAttribute("data-src");
           if (imgSrc) {
-            img.src = imgSrc; // Set the image source
-            img.classList.remove("lazy-image"); // Remove the lazy-image class
+            img.src = imgSrc;
+            img.classList.remove("lazy-image");
           }
-          observer.unobserve(img); // Stop observing once the image is loaded
+          observer.unobserve(img);
         }
       });
     }, options);
 
     cards.forEach((card) => cardObserver.observe(card));
     lazyImages.forEach((img) => imageObserver.observe(img));
+
+    return () => {
+      cards.forEach((card) => cardObserver.unobserve(card));
+      lazyImages.forEach((img) => imageObserver.unobserve(img));
+    };
   }, []);
 
   const handleRegisterClick = (eventTitle) => {
-    if (eventTitle === "ROBO WAR") {
+    if (eventTitle === "Micromouse" || "Hackathon") {
       setOverlayMessage(
-        "Sorry, the registrations are full this year. Please try again in Aadhar 14."
+        "Regisrations are only for Poornima Group Students, Please Contact Event Coordinator Via Registration Page."
       );
       setShowOverlay(true);
     } else {
@@ -137,12 +162,6 @@ const eventsData = [
     image: "/images/circuitry.webp",
   },
   {
-    title: "MACHINE O MANIA",
-    description:
-      "A hand on opportunities to explore and expand your imagination. Design the machine you desire.",
-    image: "/images/mom.webp",
-  },
-  {
     title: "ROBO SOCCER",
     description:
       "The basic purpose of this game is to direct your robots to score as many goals as you can. A specialized autonomous robot is a soccer robot.",
@@ -171,6 +190,12 @@ const eventsData = [
     description:
       "A Micromouse is a small autonomous robotic vehicle designed to solve and navigate through a maze.",
     image: "/images/race.webp",
+  },
+  {
+    title: "Hackathon",
+    description:
+      "A hand on opportunities to explore and expand your imagination.",
+    image: "/images/mom.webp",
   },
 ];
 
