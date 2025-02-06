@@ -12,7 +12,10 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(
   cors({
-    origin: "https://zc-aadhar13-frontend.onrender.com", // Update with your frontend's hosted URL
+    origin: [
+      "https://zc-aadhar13-frontend.onrender.com",
+      "https://aadhar13.vercel.app",
+    ], // Update with your frontend's hosted URL
     methods: "GET,POST",
     allowedHeaders: "Content-Type",
   })
