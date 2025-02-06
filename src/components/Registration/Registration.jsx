@@ -65,13 +65,16 @@ const Registration = () => {
     if (validateForm()) {
       setShowLoader(true); //loading started
       try {
-        const response = await fetch("https://aadharbackend-three.vercel.app", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          "https://aadharbackend-three.vercel.app/register",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
 
         if (response.ok) {
           setShowLoader(false); //loader off - success
