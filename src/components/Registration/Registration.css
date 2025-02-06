@@ -259,16 +259,18 @@ ul {
 .confirmation-content p {
   font-size: 18px;
   margin-bottom: 20px;
+  font-family: "Cinzel Decorative", serif;
 }
 
 button.close-confirmation {
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "Caesar Dressing", serif;
 }
 
 button.close-confirmation:hover {

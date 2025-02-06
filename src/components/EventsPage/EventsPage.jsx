@@ -14,7 +14,6 @@ const EventsPage = () => {
 
   useEffect(() => {
     const cards = document.querySelectorAll(".card");
-    const lazyImages = document.querySelectorAll(".lazy-image");
     const options = { root: null, rootMargin: "0px", threshold: 0.5 };
 
     const cardObserver = new IntersectionObserver((entries) => {
@@ -38,40 +37,24 @@ const EventsPage = () => {
           if (cardLeft && cardRight) {
             cardLeft.style.transform = "translateX(-100%) scale(0.8)";
             cardLeft.style.opacity = "0";
-            cardRight.style.transform = "translateX(100%) scale(0.8)"; // Reset in opposite direction
+            cardRight.style.transform = "translateX(100%) scale(0.8)";
             cardRight.style.opacity = "0";
           }
         }
       });
     }, options);
 
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          const imgSrc = img.getAttribute("data-src");
-          if (imgSrc) {
-            img.src = imgSrc;
-            img.classList.remove("lazy-image");
-          }
-          observer.unobserve(img);
-        }
-      });
-    }, options);
-
     cards.forEach((card) => cardObserver.observe(card));
-    lazyImages.forEach((img) => imageObserver.observe(img));
 
     return () => {
       cards.forEach((card) => cardObserver.unobserve(card));
-      lazyImages.forEach((img) => imageObserver.unobserve(img));
     };
   }, []);
 
   const handleRegisterClick = (eventTitle) => {
-    if (eventTitle === "Micromouse" || "Hackathon") {
+    if (eventTitle === "Micromouse" || eventTitle === "Hackathon") {
       setOverlayMessage(
-        "Regisrations are only for Poornima Group Students, Please Contact Event Coordinator Via Registration Page."
+        "Registrations are only for Poornima Group Students, Please Contact Event Coordinator Via Registration Page."
       );
       setShowOverlay(true);
     } else {
@@ -141,10 +124,12 @@ const EventsPage = () => {
             </div>
             <div className="card-gap"></div>
             <div className="card-right">
+              {/* Directly setting src for normal loading */}
               <img
-                className="lazy-image"
-                data-src={event.image}
+                className="event-image fade-in"
+                src={event.image}
                 alt={event.title}
+                onLoad={(e) => e.target.classList.add("loaded")}
               />
             </div>
           </div>
@@ -156,7 +141,7 @@ const EventsPage = () => {
 
 const eventsData = [
   {
-    title: "CIRCUITRY",
+    title: "OPEN INNOVATION",
     description:
       "Circuitry is the science of designing electronic or electric circuits, or it is the detailed layout of an electric circuit. The most crucial component of electronics is circuitry.",
     image: "/images/circuitry.webp",

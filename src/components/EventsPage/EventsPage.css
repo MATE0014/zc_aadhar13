@@ -29,6 +29,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  will-change: transform, opacity;
 }
 
 /* Main container for cards */
@@ -317,6 +318,15 @@ html {
     font-size: 0.9rem; /* Adjust smaller font size for medium screens */
     padding: 8px;
   }
+}
+
+.event-image {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.event-image.loaded {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
