@@ -1,7 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import cors from "cors";
 import bodyParser from "body-parser";
 
 dotenv.config();
@@ -9,21 +8,31 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.options("*", cors());
-
 // Middleware
-app.use(
-  cors({
-    origin: [
-      "https://zc-aadhar13-frontend.onrender.com",
-      "https://aadhar13.vercel.app",
-      "https://aadhar.poornima.org",
-    ], // Update with your frontend's hosted URL
-    methods: "GET,POST,PUT,DELETE,OPTIONS",
-    allowedHeaders: "Content-Type",
-  })
-);
 app.use(bodyParser.json());
+
+// CORS Middleware
+const allowedOrigins = [
+  "https://zc-aadhar13-frontend.onrender.com",
+  "https://aadhar13.vercel.app",
+  "https://aadhar.poornima.org",
+];
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+  }
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
 
 // MongoDB Connection
 mongoose
