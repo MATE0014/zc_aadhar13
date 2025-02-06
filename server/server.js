@@ -15,6 +15,7 @@ app.use(
     origin: [
       "https://zc-aadhar13-frontend.onrender.com",
       "https://aadhar13.vercel.app",
+      "https://aadhar.poornima.org",
     ], // Update with your frontend's hosted URL
     methods: "GET,POST",
     allowedHeaders: "Content-Type",
