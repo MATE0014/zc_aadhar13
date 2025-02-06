@@ -77,7 +77,6 @@ const Registration = () => {
         );
 
         if (response.ok) {
-          console.log("Form Data Submitted Successfully:", formData);
           setShowLoader(false); //loader off - success
           setShowConfirmation(true); // Show confirmation overlay if form is valid
         } else {

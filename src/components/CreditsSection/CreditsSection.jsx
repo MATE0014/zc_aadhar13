@@ -35,14 +35,6 @@ const CreditsSection = () => {
       linkedin: "https://www.linkedin.com/in/saksham-shakya-8540282b7",
       email: "2023pcecasaksham044@poornima.org",
     },
-    {
-      name: "Prakriti",
-      role: "Frontend Developer",
-      image: prakritiimg,
-      bgSize: "contain",
-      linkedin: "https://www.linkedin.com/in/prakriti-69b832167",
-      email: "2023pcecsprakriti122@poornima.org",
-    },
   ];
 
   return (
