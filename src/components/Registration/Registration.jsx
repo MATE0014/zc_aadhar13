@@ -66,7 +66,7 @@ const Registration = () => {
       setShowLoader(true); //loading started
       try {
         const response = await fetch(
-          "https://aadharbackend-three.vercel.app/register",
+          "https://zc-aadhar13-backend.onrender.com/register",
           {
             method: "POST",
             headers: {
