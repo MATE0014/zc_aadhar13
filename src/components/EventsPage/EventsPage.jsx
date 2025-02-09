@@ -153,19 +153,13 @@ const eventsData = [
     image: "/images/robosoccer.webp",
   },
   {
-    title: "SPUD GUN",
-    description:
-      "A toy gun that shoots a potato plug by forcing the air in the barrel to condense.",
-    image: "/images/spudgun.webp",
-  },
-  {
-    title: "COSMO CLENCH",
+    title: "COZMO CLENCH",
     description:
       "The participating teams must build a manually controlled gripper bot (wired or wireless).",
     image: "/images/cosmo.webp",
   },
   {
-    title: "ROBO RACE",
+    title: "RC Car",
     description:
       "Autonomous or wired racing robots are the focus of the competition.",
     image: "/images/race.webp",
@@ -174,13 +168,19 @@ const eventsData = [
     title: "MICROMOUSE",
     description:
       "A Micromouse is a small autonomous robotic vehicle designed to solve and navigate through a maze.",
-    image: "/images/race.webp",
+    image: "/images/micromouse.webp",
   },
   {
-    title: "Hackathon",
+    title: "HACKTHON",
     description:
       "A hand on opportunities to explore and expand your imagination.",
     image: "/images/mom.webp",
+  },
+  {
+    title: "SPUD GUN",
+    description:
+      "A toy gun that shoots a potato plug by forcing the air in the barrel to condense.",
+    image: "/images/spudgun.webp",
   },
 ];
 

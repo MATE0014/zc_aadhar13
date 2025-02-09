@@ -17,7 +17,7 @@
   background-size: 400% 400%;
   animation: gradientAnimation 5s ease infinite; /* Animated gradient */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-  font-family: "Caesar Dressing", cursive; /* Apply the Caesar Dressing font */
+  font-family: "Caesar Dressing", serif; /* Apply the Caesar Dressing font */
 }
 
 /* Animated Gradient Background */

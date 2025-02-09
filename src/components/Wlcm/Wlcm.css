@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap");
+
 /* Global styles */
 body,
 html {
@@ -49,6 +51,38 @@ html {
   height: auto;
   z-index: 1; /* Above the overlay */
 }
+/* Prize Pool Styling */
+.prize-pool {
+  position: absolute;
+  top: calc(69.88% + 88.69px); /* height sexy hai */
+  left: 50%;
+  transform: translate(-50%, 0); /* center */
+  background: linear-gradient(45deg, #07234f, #d8130c, #45060a, #0a1b3c);
+  background-size: 400% 400%;
+  color: #ccc;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: gradientAnimation 5s ease infinite;
+  font-family: "Caesar Dressing", serif;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/*Animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 /* Responsive design */
 
@@ -58,6 +92,11 @@ html {
     max-width: 100%;
     max-height: 100%;
   }
+  .prize-pool {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    top: calc(50% + 80px); /* Adjust position slightly */
+  }
 }
 
 /* For screens <= 480px (small mobile phones) */
@@ -66,6 +105,11 @@ html {
     max-width: 90%;
     max-height: 90%;
   }
+  .prize-pool {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    top: calc(50% + 60px); /* Adjust lower */
+  }
 }
 
 /* For screens between 378px and 475px */
@@ -73,5 +117,10 @@ html {
   .logo img {
     max-width: 100%;
     max-height: 100%;
+  }
+  .prize-pool {
+    font-size: 1rem;
+    padding: 6px 12px;
+    top: calc(50% + 50px);
   }
 }

@@ -19,6 +19,9 @@ const Wlcm = () => {
 
       {/* Image (logo) */}
       <img src={logoImg} alt="Logo" />
+
+      {/* Prize Pool */}
+      <div className="prize-pool">Total Prize Pool Worth ₹40,000 </div>
     </div>
   );
 };

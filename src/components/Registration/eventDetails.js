@@ -14,7 +14,7 @@ const eventDetails = {
       "For furthur details, Please refer to the rulebook",
       "Event Supervisor- Rakshita Sharma (+91 95303 28333), Anshika Jain (+91 93523 39652)",
     ],
-    "Cosmo Clench": [
+    "Cozmo Clench": [
       "Dimensions - 30x20x30, A tolerance of 5% is allowed.",
       "The bot must not exceed 5 kgs of weight including the battery",
       "Only On Board power sources are allowed with a maximum voltage of 12V",
@@ -25,24 +25,18 @@ const eventDetails = {
       "Please refer to the rulebook",
       "Event Supervisor- Yash Sir (+91 90797 56823), Kartik (+91 94859 60382)",
     ],
-    Hackathon: [
-      "Please refer to the rulebook",
-      "Event Supervisor- Pranav Khandelwal (+91 94139 67929), Diwakar Shai (+91 90249 29385)",
-    ],
   },
   teamSizes: {
     "Robo Soccer": [1, 2, 3, 4],
     "RC Car": [1, 2, 3],
-    "Cosmo Clench": [1, 2],
+    "Cozmo Clench": [1, 2],
     "Open Innovation": [1, 2, 3, 4],
-    Hackathon: [1, 2, 3, 4],
   },
   RegFee: {
     "Robo Soccer": ["1000 INR"],
     "RC Car": ["2000 INR"],
-    "Cosmo Clench": ["3000 INR"],
+    "Cozmo Clench": ["3000 INR"],
     "Open Innovation": ["150 INR"],
-    Hackathon: ["1.5 INR"],
   },
 };
 

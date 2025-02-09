@@ -333,7 +333,7 @@ const Registration = () => {
               download="Aadhar_13_Rulebook.pdf"
               className="btn-download-rulebook"
             >
-              Download Rulebook
+              View Rulebook
             </a>
 
             <button className="close-rules" onClick={() => setShowRules(false)}>

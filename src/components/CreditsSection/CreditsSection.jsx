@@ -4,7 +4,6 @@ import "./CreditsSection.css";
 import shristiimg from "/images/shristi.webp";
 import moxitimg from "/images/moxit.webp";
 import sakshamimg from "/images/saksham.webp";
-import prakritiimg from "/images/prakriti.png";
 import backgroundImage from "/images/creditsbg.webp";
 
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";

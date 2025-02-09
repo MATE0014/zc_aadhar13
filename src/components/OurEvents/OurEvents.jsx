@@ -15,14 +15,14 @@ const OurEvents = () => {
   const [clickedCardIndex, setClickedCardIndex] = useState(null);
 
   const events = [
-    { title: "Open Innovation - MoM", image: MOMImg },
-    { title: "Open Innovation - Circuitry", image: CircuitryImg },
-    { title: "Robo Soccer", image: SoccerImg },
-    { title: "Spud Gun", image: SpudGunImg },
-    { title: "Cosmo Clench", image: CosmoImg },
-    { title: "Robo Race", image: RaceImg },
-    { title: "MicroMouse", image: MicroMouseImg },
+    { title: "Open Innovation - Software", image: CircuitryImg },
     { title: "Hackathon", image: HackathonImg },
+    { title: "Robo Soccer", image: SoccerImg },
+    { title: "Cozmo Clench", image: CosmoImg },
+    { title: "RC Car", image: RaceImg },
+    { title: "MicroMouse", image: MicroMouseImg },
+    { title: "Open Innovation - Hardware", image: MOMImg },
+    { title: "Spud Gun", image: SpudGunImg },
   ];
 
   const handleCardClick = (index) => {
