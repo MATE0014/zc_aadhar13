@@ -329,8 +329,7 @@ const Registration = () => {
 
             {/* Download Rulebook Button */}
             <a
-              href="/rulebook.pdf"
-              download="Aadhar_13_Rulebook.pdf"
+              href="https://linktr.ee/aadhar13"
               className="btn-download-rulebook"
             >
               View Rulebook
