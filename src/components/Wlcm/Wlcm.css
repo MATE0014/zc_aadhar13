@@ -109,7 +109,7 @@ html {
   .prize-pool {
     font-size: 1.5rem;
     padding: 10px 20px;
-    top: calc(50% + 80px); /* Adjust position slightly */
+    top: calc(69.88% + 80px); /* Adjust position slightly */
   }
 }
 
@@ -122,7 +122,7 @@ html {
   .prize-pool {
     font-size: 1.2rem;
     padding: 8px 16px;
-    top: calc(50% + 60px); /* Adjust lower */
+    top: calc(69.88% + 60px); /* Adjust lower */
   }
 }
 
@@ -135,6 +135,6 @@ html {
   .prize-pool {
     font-size: 1rem;
     padding: 6px 12px;
-    top: calc(50% + 50px);
+    top: calc(69.88% + 50px);
   }
 }

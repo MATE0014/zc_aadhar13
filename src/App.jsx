@@ -6,7 +6,6 @@ import Wlcm from "./components/Wlcm/Wlcm";
 import Countdown from "./components/Countdown/Countdown";
 import Registration from "./components/Registration/Registration";
 import Events from "./components/EventsPage/EventsPage";
-import countdownVideo from "./videos/cdbgv.mp4";
 import OurEvents from "./components/OurEvents/OurEvents";
 import CreditsSection from "./components/CreditsSection/CreditsSection";
 
@@ -27,10 +26,7 @@ function App() {
             element={
               <>
                 <Wlcm />
-                <Countdown
-                  targetDate="2025-02-21T23:59:59"
-                  backgroundVideo={countdownVideo}
-                />
+                <Countdown targetDate="2025-02-21T23:59:59" />
                 <div style={{ padding: 0, margin: 0, height: "800px" }}>
                   <OurEvents />
                 </div>

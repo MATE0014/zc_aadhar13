@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Overlay from "./FullOverlay";
 import "./EventsPage.css";
-import eventsbgv from "../../videos/eventsbgv.mp4";
+import eventsbgv from "/videos/eventsbgv.mp4";
 import aadharimg1 from "/images/aadhar1.webp";
 import aadharimg2 from "/images/aadhar2.webp";
 import aadharimg3 from "/images/aadhar3.webp";

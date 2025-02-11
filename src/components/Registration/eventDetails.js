@@ -34,9 +34,9 @@ const eventDetails = {
   },
   RegFee: {
     "Robo Soccer": ["1000 INR"],
-    "RC Car": ["2000 INR"],
-    "Cozmo Clench": ["3000 INR"],
-    "Open Innovation": ["150 INR"],
+    "RC Car": ["800 INR"],
+    "Cozmo Clench": ["600 INR"],
+    "Open Innovation": ["400 INR"],
   },
 };
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Registration.css";
 import eventDetails from "./eventDetails";
-import regbgv from "../../videos/regbgv.mp4";
+import regbgv from "/videos/regbgv.mp4";
 import Loader from "../Loader/Loader";
 
 const Registration = () => {
@@ -386,7 +386,7 @@ const Registration = () => {
             {/* UPI ID with Copy Button */}
             <div className="upi-section">
               <p className="upi-text">
-                UPI ID: <strong>blankupi@givemeupi</strong>
+                UPI ID: <strong>Registrations Open In 2 Days</strong>
               </p>
               <button
                 className="copy-upi-btn"
