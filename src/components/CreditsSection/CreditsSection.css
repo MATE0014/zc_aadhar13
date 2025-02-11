@@ -81,6 +81,7 @@
   .credits-title {
     font-size: 1.5rem; /* Adjust font size for smaller screens */
     margin-bottom: 15px;
+    color: black;
   }
 
   .credits-card-info {
@@ -98,7 +99,8 @@
 
 @media (max-width: 480px) {
   .credits-title {
-    font-size: 1.2rem; /* Further reduce font size for very small screens */
+    font-size: 1.8rem; /* Further reduce font size for very small screens */
+    color: black;
   }
 
   .credits-grid {
