@@ -29,8 +29,8 @@ const eventDetails = {
   teamSizes: {
     "Robo Soccer": [1, 2, 3, 4],
     "RC Car": [1, 2, 3],
-    "Cozmo Clench": [1, 2],
-    "Open Innovation": [1, 2, 3, 4],
+    "Cozmo Clench": [1, 2, 3],
+    "Open Innovation": [1, 2, 3],
   },
   RegFee: {
     "Robo Soccer": ["1000 INR"],

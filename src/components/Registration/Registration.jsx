@@ -369,7 +369,7 @@ const Registration = () => {
 
             {/* QR Code Image */}
             <img
-              src="/images/payment_qr.webp"
+              src="/images/payment_qr.jpg"
               alt="QR Code"
               className="qr-code"
             />
@@ -386,7 +386,7 @@ const Registration = () => {
             {/* UPI ID with Copy Button */}
             <div className="upi-section">
               <p className="upi-text">
-                UPI ID: <strong>Registrations Open In 2 Days</strong>
+                UPI ID: <strong>paytmqr68rnsv@ptys</strong>
               </p>
               <button
                 className="copy-upi-btn"
