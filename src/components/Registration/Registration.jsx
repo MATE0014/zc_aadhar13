@@ -391,7 +391,7 @@ const Registration = () => {
               <button
                 className="copy-upi-btn"
                 onClick={() => {
-                  navigator.clipboard.writeText("blankupi@givemeupi");
+                  navigator.clipboard.writeText("paytmqr68rnsv@ptys");
                   setCopied(true); // Change button text
                   setTimeout(() => setCopied(false), 3000); // Reset after 2s
                 }}
