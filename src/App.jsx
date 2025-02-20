@@ -26,7 +26,7 @@ function App() {
             element={
               <>
                 <Wlcm />
-                <Countdown targetDate="2025-02-21T23:59:59" />
+                <Countdown targetDate="2025-02-20T23:59:59" />
                 <div style={{ padding: 0, margin: 0, height: "800px" }}>
                   <OurEvents />
                 </div>
